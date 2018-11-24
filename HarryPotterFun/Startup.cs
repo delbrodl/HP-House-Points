@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HarryPotterFun.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,9 @@ namespace HarryPotterFun
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // Configure the application dependencies
+            services.AddTransient<IHouseDAL>(d => new HouseSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=HarryPotterFun;Integrated Security=true;"));
+            services.AddTransient<IStudentDAL>(d => new StudentSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=HarryPotterFun;Integrated Security=true;"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

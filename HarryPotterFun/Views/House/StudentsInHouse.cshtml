@@ -1,0 +1,25 @@
+﻿@model IList<Student>
+
+@{
+    ViewData["Title"] = "StudentsInHouse";
+}
+
+<h2>Students</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Student Id</td>
+            <td>Full Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.FirstName @student.LastName</td>
+            </tr>
+        }
+    </tbody>
+</table>
