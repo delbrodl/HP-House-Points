@@ -6,10 +6,15 @@
 
 <h2>Welcome to Hogwarts</h2>
 
-@foreach(var house in Model)
-{
-<a asp-controller="house" asp-action="StudentsInHouse" asp-route-houseId="@house.HouseId">
-    <h1>@house.HouseName</h1>
-    <img src="~/images/@(house.HouseName)_Crest.jpg" alt="Crest image for @house.HouseName">
-</a>
-}
+<div class="house-container">
+    @foreach (var house in Model)
+    {
+    <div class="house">
+        <a asp-controller="house" asp-action="StudentsInHouse" asp-route-houseId="@house.HouseId">
+            <h1>@house.HouseName</h1>
+            <img src="~/images/@(house.HouseName)_Crest.jpg" alt="Crest image for @house.HouseName">
+        </a>
+        <h4>Current House Points: @house.HousePoints</h4>
+    </div>
+    }
+</div>

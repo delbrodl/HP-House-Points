@@ -35,3 +35,13 @@ body {
         display: none;
     }
 }
+
+.house-container {
+    display: flex;
+}
+
+.house {
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}

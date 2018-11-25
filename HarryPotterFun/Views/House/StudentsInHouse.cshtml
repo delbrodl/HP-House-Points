@@ -6,6 +6,15 @@
 
 <h2>Students</h2>
 
+<div class="points">
+    <p>Points: </p>
+    <form asp-controller="house" asp-action="index" method="post">
+        <input type="number" value="" name="quantity" />
+        <button name="add-points" class="add-points btn btn-default">Give Points</button>
+        <button name="remove-points" class="remove-points btn btn-default">Take Away Points</button>
+    </form>
+</div>
+
 <table class="table table-striped">
     <thead>
         <tr>

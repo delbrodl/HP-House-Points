@@ -32,5 +32,15 @@ namespace HarryPotterFun.Controllers
 
             return View(students);
         }
+
+        public IActionResult AddPoints(int points)
+        {
+
+        }
+
+        public IActionResult RemovePoints(int points)
+        {
+
+        }
     }
 }
